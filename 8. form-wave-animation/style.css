@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: steelblue;
+    background-color: palevioletred;
     color: white;
     font-family: 'Muli', sans-serif;
     display: flex;
@@ -30,7 +30,7 @@ body {
 
 .container a {
     text-decoration: none;
-    color: lightblue
+    color: lightpink
 }
 
 .form-control {
@@ -43,7 +43,7 @@ body {
     cursor: pointer;
     display: inline-block;
     width: 100%;
-    background: lightblue;
+    background: lightpink;
     padding: 15px;
     font-family: inherit;
     font-size: 15px;
@@ -69,15 +69,20 @@ body {
     border-bottom: 2px white solid;
     display: block;
     width: 100%;
-    padding: 15px 0;
+    padding: 30px 0;
     color: white;
     font-size: 18px;
 }
 
+.form-control.active label span{
+    transform: translateY(-30px);
+    color: pink;
+  }
+
 .form-control input:focus, 
 .form-control input:valid {
     outline: 0;
-    border-bottom-color: lightblue;
+    border-bottom-color: pink;
     transform: translateY(-20px);
 }
 
@@ -96,6 +101,6 @@ body {
 
 .form-control input:focus + label span,
 .form-control input:valid + label span {
-    color: lightblue;
+    color: pink;
     transform: translateY(-30px);
 }
