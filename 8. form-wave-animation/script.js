@@ -11,9 +11,5 @@ labels.forEach(label => {
 });
 
 input.addEventListener('keyup', () => {
-    if (input.value !== '') {
-        form.classList.add('.active') 
-    } else {
-        form.classList.remove('.active')
-    }
-});
+    input.value !== '' ? form.classList.add('.active') : form.classList.remove('.active')
+})
