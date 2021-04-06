@@ -20,7 +20,7 @@ h1 {
 }
 
 .faq {
-  background-color: rgb(196, 172, 176);
+  background-color: rgb(126, 35, 129);
   border: 1px solid #9fa4a8;
   border-radius: 10px;
   margin: 20px 0;
@@ -28,18 +28,20 @@ h1 {
   position: relative;
   overflow: hidden;
   transition: 0.3s ease;
+  color: white;
 }
 
 .faq.active {
-  background-color: #fff;
+  background-color: rgb(233, 180, 233);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+  color: rgb(192, 57, 129);
 }
 
 .faq.active::before,
 .faq.active::after {
   content: '\f075';
   font-family: 'Font Awesome 5 Free';
-  color: #2ecc71;
+  color: purple;
   font-size: 7rem;
   position: absolute;
   opacity: 0.2;
