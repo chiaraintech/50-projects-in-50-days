@@ -22,7 +22,7 @@ h1 {
 .faq {
   background-color: rgb(126, 35, 129);
   border: 1px solid #9fa4a8;
-  border-radius: 10px;
+  border-radius: 20px;
   margin: 20px 0;
   padding: 30px;
   position: relative;
@@ -71,9 +71,9 @@ h1 {
 }
 
 .faq-toggle {
-  background-color: transparent;
+  background-color: magenta;
   border: 0;
-  border-radius: 50%;
+  border-radius: 40%;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -96,7 +96,7 @@ h1 {
 }
 
 .faq.active .faq-toggle .fa-times {
-  color: #fff;
+  color: purple;
   display: block;
 }
 
