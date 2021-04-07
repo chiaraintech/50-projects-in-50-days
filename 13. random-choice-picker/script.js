@@ -21,47 +21,42 @@ function createTags(input) {
     tagsElement.innerHTML = ''
 
     tags.forEach(tag => {
-        const tagEl = document.createElement('span')
-        tagElement.classList.add('tag')
-        tagElement.innerText = tag
-        tagsElement.appendChild(tagEl)
+        const tagElement = document.createElement('span');
+        tagElement.classList.add('tag');
+        tagElement.innerText = tag;
+        tagsElement.appendChild(tagElement);
     })
 };
 
 function randomSelect() {
-    const times = 30
-
+    const times = 30;
     const interval = setInterval(() => {
-        const randomTag = pickRandomTag()
-
-        highlightTag(randomTag)
-
+        const randomTag = pickRandomTag();
+        highlightTag(randomTag);
         setTimeout(() => {
-            unHighlightTag(randomTag)
-        }, 100)
+            unHighlightTag(randomTag);
+        }, 100);
     }, 100);
 
     setTimeout(() => {
-        clearInterval(interval)
-
+        clearInterval(interval);
         setTimeout(() => {
-            const randomTag = pickRandomTag()
+            const randomTag = pickRandomTag();
+            highlightTag(randomTag);
+        }, 100);
 
-            highlightTag(randomTag)
-        }, 100)
-
-    }, times * 100)
+    }, times * 100);
 };
 
 function pickRandomTag() {
-    const tags = document.querySelectorAll('.tag')
-    return tags[Math.floor(Math.random() * tags.length)]
+    const tags = document.querySelectorAll('.tag');
+    return tags[Math.floor(Math.random() * tags.length)];
 };
 
 function highlightTag(tag) {
-    tag.classList.add('highlight')
+    tag.classList.add('highlight');
 };
 
 function unHighlightTag(tag) {
-    tag.classList.remove('highlight')
+    tag.classList.remove('highlight');
 };
