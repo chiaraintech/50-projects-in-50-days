@@ -2,6 +2,9 @@ const smallCups = document.querySelectorAll('.cup-small');
 const liters = document.getElementById('liters');
 const percentage = document.getElementById('percentage');
 const remained = document.getElementById('remained');
+const main = document.getElementById('main');
+
+updateBigCup();
 
 smallCups.forEach((smallCup, index) => {
     smallCup.addEventListener('click', () => 
@@ -22,4 +25,36 @@ function highlightCups(index) {
             smallCup.classList.remove('full');                                          //Otherwise remove the class of 'full'.
         };
     });
+
+    updateBigCup();
 };
+
+function updateBigCup() {
+    const fullCups = document.querySelectorAll('.cup-small.full').length
+    const totalCups = smallCups.length
+
+    if(fullCups === 0) {
+        percentage.style.visibility = 'hidden'
+        percentage.style.height = 0
+    } else {
+        percentage.style.visibility = 'visible'
+        percentage.style.height = `${fullCups / totalCups * 330}px`
+        percentage.innerText = `${fullCups / totalCups * 100}%`
+    }
+
+    if (fullCups === totalCups) {
+        remained.style.visibility = 'hidden';
+        remained.style.height = 0;
+        percentage.style.background = 'pink';
+        percentage.innerText = "WELL DONE!";
+        percentage.style.color = 'magenta';
+        percentage.style.display = 'flex';
+        percentage.style.alignContent = 'center';
+        percentage.style.textAlign = 'center';
+        main.style.border = '2px magenta solid';
+        
+    } else {
+        remained.style.visibility = 'visible';
+        liters.innerText = `${250 * fullCups / 1000} L`
+    }
+}
