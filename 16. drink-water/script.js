@@ -30,16 +30,16 @@ function highlightCups(index) {
 };
 
 function updateBigCup() {
-    const fullCups = document.querySelectorAll('.cup-small.full').length
-    const totalCups = smallCups.length
+    const fullCups = document.querySelectorAll('.cup-small.full').length;               //Grab the number of currently full cups.
+    const totalCups = smallCups.length;                                                 //Grab the number of all the cups.
 
-    if(fullCups === 0) {
-        percentage.style.visibility = 'hidden'
-        percentage.style.height = 0
+    if(fullCups === 0) {                                                                //CASE 1: if no cup is full, hide the percentage.
+        percentage.style.visibility = 'hidden';
+        percentage.style.height = 0;
     } else {
-        percentage.style.visibility = 'visible'
-        percentage.style.height = `${fullCups / totalCups * 330}px`
-        percentage.innerText = `${fullCups / totalCups * 100}%`
+        percentage.style.visibility = 'visible'                                         //Else, make it visible and set the height to the ratio of full to total cups, times the height of the div.
+        percentage.style.height = `${fullCups / totalCups * 330}px`;
+        percentage.innerText = `${fullCups / totalCups * 100}%`;                        //Then, set the percentage inner text to the percentage currently in use.
     }
 
     if (fullCups === totalCups) {
@@ -55,6 +55,6 @@ function updateBigCup() {
         
     } else {
         remained.style.visibility = 'visible';
-        liters.innerText = `${250 * fullCups / 1000} L`
+        liters.innerText = `${250 * fullCups / 1000} L`;
     }
-}
+};
