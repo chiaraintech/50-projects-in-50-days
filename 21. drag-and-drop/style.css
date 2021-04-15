@@ -24,7 +24,7 @@ body {
     width: 150px;
     margin: 10px;
     border: solid 3px black;
-    background: white;
+    background: darkmagenta;
 }
 
 .fill {
@@ -35,11 +35,6 @@ body {
 }
 
 .hold {
-    border: solid 5px aliceblue;
-}
-
-.hovered {
-    background-color: darkmagenta;
-    border-color: white;
+    border: solid 5px pink;
     border-style: dashed;
 }
