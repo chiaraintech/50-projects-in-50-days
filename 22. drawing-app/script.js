@@ -1,8 +1,14 @@
 const canvas = document.getElementById('canvas');
+const increaseBtn = document.getElementById('increase');
+const decreaseBtn = document.getElementById('decrease');
+const sizeElement = document.getElementById('size');
+const colorElement = document.getElementById('color');
+const clearElement = document.getElementById('clear');
 const ctx = canvas.getContext('2d');
-const size = 20;
+
+let size = 5;
+let color = 'black';
 let isPressed = false;
-const color = 'black';
 let x;
 let y;
 
@@ -29,6 +35,10 @@ canvas.addEventListener('mousemove', (e) => {
     }
 });
 
+function updateSizeOnScreen() {
+    sizeElement.innerText = size;
+}
+
 function drawCircle(x, y) {
     ctx.beginPath();
     ctx.arc(x, y, size, 0, Math.PI * 2, true); // Outer circle
@@ -44,3 +54,25 @@ function drawLine(x1, y1, x2, y2) {
     ctx.lineWidth = size;
     ctx.stroke()
 };
+
+colorElement.addEventListener('change', (e) => {
+    color = e.target.value;
+});
+
+increaseBtn.addEventListener('click', () => {
+    size += 5;
+    if (size > 50) {
+        size = 50
+    };
+    updateSizeOnScreen();
+});
+
+decreaseBtn.addEventListener('click', () => {
+    size -= 5;
+    if (size < 5) {
+        size = 5
+    };
+    updateSizeOnScreen();
+});
+
+clearElement.addEventListener('click', () => ctx.clearRect(0,0, canvas.width, canvas.height));
