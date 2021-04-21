@@ -79,9 +79,9 @@ body {
     align-items: center;
 }
 
-.user-form ul li strong {
+.user-info ul li strong {
     font-size: 0.9rem;
-    margin-right: 0.5rem
+    margin-left: 0.5rem
 }
 
 .repo {
