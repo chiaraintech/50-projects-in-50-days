@@ -15,6 +15,20 @@ const randomFunc = {
     symbol: getRandomSymbol
 }
 
+clipboardEl.addEventListener('click', () => {
+    const textarea = document.createElement('textarea');
+    const password = resultEl.innerText;
+
+    if (!password) { return }
+
+    textarea.value = password;
+    document.body.appendChild(textarea);                //Grabbing the text area and putting it into the body.
+    textarea.select();                                  //Selecting everything in the text area.
+    document.execCommand('copy');                       //Copy whatever is selected.
+    textarea.remove();
+    alert('Password is copied to the clipboard.');
+})  
+
 generateEl.addEventListener('click', () => {
     const length = +lengthEl.value
     const hasLower = lowercaseEl.checked
