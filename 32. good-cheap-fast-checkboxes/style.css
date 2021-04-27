@@ -27,23 +27,22 @@ body {
 }
 
 .label {
-    width: 80px;
-    height: 40px;
+    position: relative;
     background-color: pink;
     border-radius: 50px;
     cursor: pointer;
     display: inline-block;
-    position: relative;
-    padding-left: 10px;
     margin: 0 15px 0;
-}
+    width: 80px;
+    height: 40px;
+  }
 
 .toggle:checked + .label {
     background-color: rebeccapurple;
 }
 
 .ball {
-    background-color: violet;
+    background: violet;
     height: 34px;
     width: 34px;
     border-radius: 50%;
@@ -52,4 +51,37 @@ body {
     left: 3px;
     align-items: center;
     justify-content: center;
+    animation: slideOff 0.3s linear forwards;
+}
+
+.toggle:checked + .label .ball {
+    animation: slideOn 0.3s linear forwards;
+}
+
+@keyframes slideOn {
+    0% {
+        transform: translateX(0) scale(1);
+    }
+
+    50% {
+        transform: translateX(20px) scale(1.2);
+    }
+
+    100% {
+        transform: translateX(40px) scale(1);
+    }
+}
+
+@keyframes slideOff {
+    0% {
+        transform: translateX(40px) scale(1);
+    }
+
+    50% {
+        transform: translateX(20px) scale(1.2);
+    }
+
+    100% {
+        transform: translateX(0) scale(1);
+    }
 }
