@@ -80,32 +80,27 @@ body {
 }
 
 .nums span.in {
-    transform: translate(-50%, -50%) rotate(0);
-    animation: goIn .5s ease-in-out;
-}
-
-.nums span.out {
-    transform: translate(-50%, -50%) rotate(0);
-    animation: goOut .5s ease-in-out;
-}
-
-@keyframes goIn {
+    transform: translate(-50%, -50%) rotate(0deg);
+    animation: goIn 0.5s ease-in-out;
+  }
+  
+  .nums span.out {
+    animation: goOut 0.5s ease-in-out;
+  }
+  
+  @keyframes goIn {
     0% {
-        transform: translate(-50%, -50%) rotate(120deg);
-    }
-
-    100% {
-        transform: translate(-50%, -50%) rotate(0);
-    }
-}
-
-@keyframes goOut {
-    0% {
-      transform: translate(-50%, -50%) rotate(0deg);
+      transform: translate(-50%, -50%) rotate(120deg);
     }
   
-    60% {
-      transform: translate(-50%, -50%) rotate(20deg);
+    100% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+  }
+  
+  @keyframes goOut {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
     }
   
     100% {
