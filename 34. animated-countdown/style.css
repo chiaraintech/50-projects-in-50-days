@@ -60,3 +60,55 @@ body {
         transform: translate(-50%, -50%) scale(1);
     }
 }
+
+.nums {
+    color: rgb(57, 57, 104);
+    font-size: 40px;
+    position: relative;
+    overflow: hidden;
+    width: 250px;
+    height: 40px;
+    background-color: rgb(135, 187, 222);
+}
+
+.nums span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(120deg);
+    transform-origin: bottom center;
+}
+
+.nums span.in {
+    transform: translate(-50%, -50%) rotate(0);
+    animation: goIn .5s ease-in-out;
+}
+
+.nums span.out {
+    transform: translate(-50%, -50%) rotate(0);
+    animation: goOut .5s ease-in-out;
+}
+
+@keyframes goIn {
+    0% {
+        transform: translate(-50%, -50%) rotate(120deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(0);
+    }
+}
+
+@keyframes goOut {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+  
+    60% {
+      transform: translate(-50%, -50%) rotate(20deg);
+    }
+  
+    100% {
+      transform: translate(-50%, -50%) rotate(-120deg);
+    }
+  }
