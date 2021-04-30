@@ -13,12 +13,12 @@ function run() {
 }
 
 function changeImage() {
-    if (index > image.length -1) {
+    if (index > image.length -1) {                                  //If it's the last image, go back to the start at index 0.
         index = 0
-    } else if (index < 0) {
+    } else if (index < 0) {                                         //If I click to go back but I have the first image, redirect me to the last one.
         index = image.length - 1
     }
-    container.style.transform = `translateX(${-index * 500}px)`;
+    container.style.transform = `translateX(${-index * 500}px)`;    //If it's not at the beginning or the end, move it horizontally.
 }
 
 function resetInterval() {
