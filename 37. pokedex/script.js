@@ -1,6 +1,6 @@
-const poke_container = document.getElementById('poke-container')
-const pokemon_count = 150
-const colors = {
+const poke_container = document.getElementById('poke-container');
+const pokemon_count = 150;
+const colours = {
     fire: '#FDDFDF',
     grass: '#DEFDE0',
 	electric: '#FCF7DE',
@@ -15,19 +15,46 @@ const colors = {
 	flying: '#F5F5F5',
 	fighting: '#E6E0D4',
 	normal: '#F5F5F5'
-}
+};
+
+const main_types = Object.keys(colours);
 
 const fetchPokemons = async () => {
     for (let i = 1; i <= pokemon_count; i++) {
-        await getPokemon(i)
-    }
-}
+        await getPokemon(i);
+    };
+};
 
 const getPokemon = async (id) => {
     const URL = `https://pokeapi.co/api/v2/pokemon/${id}`;
     const res = await fetch(URL);
     const data = await res.json();
-    console.log(data)
-}
+    createPokemonCard(data);
+};
 
-fetchPokemons()
+const createPokemonCard = (pokemon) => {
+    const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
+    const id = pokemon.id.toString().padStart(3, '0');
+    const poke_types = pokemon.types.map(type => type.type.name);
+    const type = main_types.find(type => poke_types.indexOf(type) > -1);
+    const colour = colours[type];
+    
+    const pokemonElement = document.createElement('div');
+    pokemonElement.style.backgroundColor = colour;
+    pokemonElement.classList.add('pokemon');
+    const pokemonInnerHTML = `
+            <div class="image-container">
+                <img src="https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png" alt="">
+            </div>
+            <div class="info">
+                <span class="number">#${id}</span>
+                <h3 class="name">${name}</h3>
+                <small class="type">Type: <span>${type}</span></small>
+            </div>
+    `
+
+    pokemonElement.innerHTML = pokemonInnerHTML;
+    poke_container.appendChild(pokemonElement);
+};
+
+fetchPokemons();
