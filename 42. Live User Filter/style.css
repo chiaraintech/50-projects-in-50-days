@@ -89,5 +89,5 @@ body {
 }
 
 .user-list li.hide {
-    display: non;
+    display: none;
 }
