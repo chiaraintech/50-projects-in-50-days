@@ -56,3 +56,17 @@ form {
     font-size: 1.5rem;
     padding: 1rem 2rem;
 }
+
+.todos li.completed {
+    color: grey;
+    text-decoration: line-through;
+}
+
+.input:focus {
+    outline-color: rebeccapurple;
+}
+
+small {
+    margin-top: 2rem;
+    text-align: center;
+}
