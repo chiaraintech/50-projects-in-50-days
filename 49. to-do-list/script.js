@@ -19,7 +19,12 @@ function addTodo(todo) {
             todoElement.classList.add('completed')
         }
         todoElement.innerText = todoText;
+        todoElement.addEventListener('click', () => todoElement.classList.toggle('completed'))
+        todoElement.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+            todoElement.remove();
+        })
         todosUL.appendChild(todoElement);
         input.value = '';
-    }
-}
+    };
+};
